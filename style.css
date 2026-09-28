@@ -1,3 +1,61 @@
 * {
     font-family:'Courier New', Courier, monospace;
 }
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+     /* 
+       list-style: none = No marker is shown 
+     */
+    }
+
+.header {
+    top: 0;
+    background-color: #afafaf;
+    border-radius: 10px; 
+}
+.nav {
+    margin-top: 5px;
+     }
+
+.nav a {
+    padding: 10px 15px;
+    text-align: left;
+    display: block;
+    color: #000000;
+    font-size: .75em;
+    text-decoration: none;
+
+}
+
+.form {
+    background-color: #d3d3d3;
+    padding: 25px 25px;
+    text-align: center;
+    width: 250px;
+    border-radius: 15px;
+    margin: 40px auto;
+}
+
+.user {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+}
+
+.login {
+    width: 30%;
+    padding: 5px;
+    background-color: #364dc2;
+    color: white;
+    border: none;
+}
+
+.form > a {
+    color: rgb(29, 165, 223);
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+}
