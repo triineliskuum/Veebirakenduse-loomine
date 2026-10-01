@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+ 
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homework 1</title>
+    <link rel="stylesheet" href="style.css">
   </head>
+  
   <body>
     
     <header class="header">
       <nav>
         <ul class="nav">
           <li><a href="index.html">Home</a></li>
+          <li><a href="addPost.html">Add post</a></li>
         </ul>
       </nav>
 
@@ -20,6 +24,69 @@
         height="50"
         alt="Profile picture">
     </header>
+
+    
+  <div class="layout">
+ 
+    <aside class="side"></aside>
+ 
+    <main class="feed">
+ 
+      <article class="post">
+        <header class="post-header">
+          <img src="res/images/profile.svg" width="25" height="25" alt="Avatar">
+          <time datetime="2026-10-22">Oct 4, 2026</time>
+        </header>
+        <img class="post-photo" src="res/images/tartu.jpg" alt="Tartu town hall square">
+        <p class="post-text">Tartu 2026</p>
+        <button class="like" type="button" aria-label="Like">👍</button>
+      </article>
+ 
+      <article class="post">
+        <header class="post-header">
+          <img src="res/images/profile.svg" width="25" height="25" alt="Avatar">
+          <time datetime="2026-10-02">Oct 2, 2026</time>
+        </header>
+        <p class="post-text">Anyone knows in which room the lab is today?</p>
+        <button class="like" type="button" aria-label="Like">👍</button>
+      </article>
+ 
+      <article class="post">
+        <header class="post-header">
+          <img src="res/images/profile.svg" width="25" height="25" alt="Avatar">
+          <time datetime="2026-09-28">Sep 28, 2026</time>
+        </header>
+        <img class="post-photo" src="res/images/toomemagi.jpg" alt="Toome Hill in autumn">
+        <p class="post-text">Autumn walk on Toome Hill</p>
+        <button class="like" type="button" aria-label="Like">👍</button>
+      </article>
+ 
+      <article class="post">
+        <header class="post-header">
+          <img src="res/images/profile.svg" width="25" height="25" alt="Avatar">
+          <time datetime="2026-09-25">Sep 25, 2026</time>
+        </header>
+        <p class="post-text">Does anyone have notes from last week's lecture?</p>
+        <button class="like" type="button" aria-label="Like">👍</button>
+      </article>
+ 
+      <article class="post">
+        <header class="post-header">
+          <img src="res/images/profile.svg" width="25" height="25" alt="Avatar">
+          <time datetime="2026-09-20">Sep 20, 2026</time>
+        </header>
+        <img class="post-photo" src="res/images/library.jpg" alt="University library">
+        <p class="post-text">Studying at the library today</p>
+        <button class="like" type="button" aria-label="Like">👍</button>
+      </article>
+ 
+    </main>
+ 
+    <aside class="side"></aside>
+ 
+  </div>
+ 
+  <footer class="footer"></footer>
 
   </body>
 </html>
