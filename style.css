@@ -59,3 +59,44 @@ ul {
     display: inline-block;
     margin-top: 10px;
 }
+
+.nav a:hover {
+    background-color: #8f8f8f;
+}
+
+.post-form {
+    background-color: #d3d3d3;
+    padding: 25px;
+    width: 250px;
+    border-radius: 15px;
+    margin: 40px auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.post-form textarea {
+    height: 100px;
+    resize: vertical;
+    border: none;
+    padding: 10px;
+}
+
+.post-form input[type="file"] {
+    width: 100%;
+}
+
+.create-post {
+    width: 50%;
+    padding: 7px;
+    margin: 10px auto 0;
+    background-color: #364dc2;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.create-post:hover {
+    background-color: #25378f;
+}
