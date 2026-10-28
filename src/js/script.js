@@ -1,9 +1,10 @@
 window.onload = function() {
 
-    fetch('https://api.jsonbin.io/v3/b/6ad99c94ac6210605a47e2f9')
+    /*
+    fetch('https://api.npoint.io/e18b30424caef9fda7f6')
         .then((response) => response.json())
-        .then(data => {
-            const json = data.record;
+        .then(json => {
+            
             console.log(json);
             let div = document.createElement("div");
             div.className = "layout";
@@ -67,7 +68,7 @@ window.onload = function() {
             document.body.appendChild(div);
         })
         .catch(error => console.error('Error fetching online: ', error));
-        /*
+        */
     fetch('posts.json')
         .then((response) => response.json())
         .then(json => {
@@ -132,6 +133,6 @@ window.onload = function() {
             div.append(aside2);
             
             document.body.appendChild(div);
-        })*/
+        })
 
 }
