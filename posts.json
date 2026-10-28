@@ -4,69 +4,79 @@
       "author": "Anna",
       "date": "2026-10-04",
       "text": "Tartu 2026",
-      "image": "res/images/tartu.jpg"
+      "image": "res/images/tartu.jpg",
+      "profile_picture": "res/images/profile.svg"
     },
     {
       "id": 2,
       "author": "Mark",
       "date": "2026-10-02",
       "text": "Anyone knows in which room the lab is today?",
-      "image": null
+      "image": null,
+      "profile_picture": "res/images/profile.svg"
     },
     {
       "id": 3,
       "author": "Laura",
       "date": "2026-09-28",
       "text": "Autumn walk on Toome Hill",
-      "image": "res/images/toomemagi.jpg"
+      "image": "res/images/toomemagi.jpg",
+      "profile_picture": "res/images/profile.svg"
     },
     {
       "id": 4,
       "author": "Karl",
       "date": "2026-09-25",
       "text": "Does anyone have notes from last week's lecture?",
-      "image": null
+      "image": null,
+      "profile_picture": "res/images/profile.svg"
     },
     {
       "id": 5,
       "author": "Emma",
       "date": "2026-09-20",
       "text": "Studying at the library today",
-      "image": "res/images/library.jpg"
+      "image": "res/images/library.jpg",
+      "profile_picture": "res/images/profile.svg"
     },
     {
       "id": 6,
       "author": "Martin",
       "date": "2026-09-18",
       "text": "Looking forward to the weekend!",
-      "image": null
+      "image": null,
+      "profile_picture": "res/images/profile.svg"
     },
     {
       "id": 7,
       "author": "Sofia",
       "date": "2026-09-15",
       "text": "Beautiful weather in Tartu today",
-      "image": "res/images/tartu.jpg"
+      "image": "res/images/tartu.jpg",
+      "profile_picture": "res/images/profile.svg"
     },
     {
       "id": 8,
       "author": "Oliver",
       "date": "2026-09-12",
       "text": "Has anyone started working on the JavaScript homework?",
-      "image": null
+      "image": null,
+      "profile_picture": "res/images/profile.svg"
     },
     {
       "id": 9,
       "author": "Maria",
       "date": "2026-09-10",
       "text": "Another productive day at the library",
-      "image": "res/images/library.jpg"
+      "image": "res/images/library.jpg",
+      "profile_picture": "res/images/profile.svg"
     },
     {
       "id": 10,
       "author": "Robert",
       "date": "2026-09-08",
       "text": "Enjoying the autumn in Tartu",
-      "image": "res/images/toomemagi.jpg"
+      "image": "res/images/toomemagi.jpg",
+      "profile_picture": "res/images/profile.svg"
     }
 ]  
