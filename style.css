@@ -23,18 +23,22 @@ ul {
     z-index: 10;
     background-color: var(--bar-bg);
     border-radius: 10px;
+    padding: 0 10px
+}
 
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 .nav {
     display: flex;
-    margin-top: 5px;
+    margin: 0;
 }
 
-.nav a {
+.nav a, .nav span{
     display: block;
     padding: 10px 15px;
     color: #000000;
@@ -50,9 +54,6 @@ ul {
     margin-right: 10px;
 }
 
-.profile-link:hover .profile-picture {
-    opacity: .7;
-}
 
 /* ===== Login and Add post forms (shared card look) ===== */
 .form,
@@ -223,4 +224,54 @@ ul {
         flex: 1;
         max-width: 100%;
     }
+}
+/* ===== Dropdown Menu ===== */
+.user-menu {
+    position: relative;
+    display: inline-block;
+    margin-right: 10px; 
+}
+
+#profile-icon:hover {
+    opacity: 0.7;
+}
+
+.dropdown-menu {
+    display: none; /* Vaikimisi peidus */
+    position: absolute;
+    right: 0;
+    top: 55px; /* Paigutab menüü pildi alla */
+    background-color: var(--card-bg);
+    min-width: 170px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    padding: 12px;
+    z-index: 1000;
+}
+
+/* Kui JS lisab klassi 'show', läheb menüü nähtavaks */
+.dropdown-menu.show {
+    display: block;
+}
+
+.dropdown-name {
+    font-size: 0.85em;
+}
+
+.dropdown-email {
+    font-size: 0.85em;
+    margin-top: 4px;
+    padding-bottom: 8px;
+}
+
+.dropdown-logout {
+    display: block;
+    color: black;
+    text-decoration: none;
+    margin-top: 4px;
+    font-size: 0.85em;
+}
+
+.dropdown-logout:hover {
+    text-decoration: underline;
 }
