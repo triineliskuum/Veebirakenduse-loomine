@@ -11,7 +11,11 @@ export default {
 </script>
 
 <template>
-    <Header />
-    <router-view />
-    <Footer />
+    <div class="app-shell">
+        <Header />
+        <div class="page-content">
+            <router-view />
+        </div>
+        <Footer />
+    </div>
 </template>

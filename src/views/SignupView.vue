@@ -43,7 +43,7 @@ export default {
             this.failedConditions = [];
 
             if (this.password.length < 8 || this.password.length >= 15){
-                this.failedConditions.push('Password should be between 8-15 characters');
+                this.failedConditions.push('Password must be at least 8 characters and less than 15 characters');
             }
 
             if (!/^[A-Z]/.test(this.password)){
@@ -76,68 +76,3 @@ export default {
     }
 }
 </script>
-
-<style scoped>
-.page-wrapper {
-    background-color: #cccccc; /* Outer gray background matching wireframe */
-    padding: 50px 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 60vh;
-    border-radius: 10px;
-}
-
-.signup-box {
-    background-color: #e9ede4; /* Light greenish-gray inner container box */
-    padding: 40px;
-    border-radius: 12px;
-    width: 100%;
-    max-width: 450px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.input-row {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.label {
-    width: 90px;
-    font-weight: 500;
-    color: #333;
-}
-
-.input-row input {
-    flex: 1;
-    padding: 10px 15px;
-    border: 1px solid #ccc;
-    border-radius: 20px; /* Gives inputs the smooth pill look from the wireframe */
-    background-color: #ffffff;
-    outline: none;
-}
-
-.button-row {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-}
-
-.signup-btn {
-    background-color: #8da4c4; /* Soft blue-gray button color */
-    color: white;
-    border: none;
-    padding: 10px 35px;
-    border-radius: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.2s;
-}
-
-.signup-btn:hover {
-    background-color: #748eaa;
-}
-
-</style>

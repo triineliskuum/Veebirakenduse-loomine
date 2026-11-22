@@ -31,8 +31,8 @@ export default {
                 :id="post.id"
             />
 
-            <button type="button" @click="resetLikes">
-                Reset Likes
+            <button class="reset-likes-btn" type="button" @click="resetLikes">
+                Reset likes
             </button>
         </main>
 

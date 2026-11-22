@@ -16,22 +16,35 @@ export default {
     methods: {
         likePost() {
             this.$store.commit('likePost', this.id)
+        },
+
+        formatDate(rawDate) {
+            if (!rawDate) return ''
+            const date = new Date(rawDate)
+            return date.toLocaleDateString('en-US', {
+                month: 'short',
+                day: 'numeric',
+                year: 'numeric'
+            })
         }
     }
 }
 </script>
 
 <template>
-    <article class="post">
+    <article v-if="post" class="post">
         <header class="post-header">
-            <img
-                :src="post.profile_picture"
-                width="25"
-                height="25"
-                alt="Avatar"
-            >
-            <span>{{ post.author }}</span>
-            <time :datetime="post.date">{{ post.date }}</time>
+            <div class="post-author">
+                <img
+                    v-if="post.profile_picture"
+                    :src="post.profile_picture"
+                    width="25"
+                    height="25"
+                    alt="Avatar"
+                >
+                <span v-if="post.author">{{ post.author }}</span>
+            </div>
+            <time :datetime="post.date">{{ formatDate(post.date) }}</time>
         </header>
 
         <img
@@ -43,8 +56,11 @@ export default {
 
         <p class="post-text">{{ post.text }}</p>
 
-        <button class="like" type="button" @click="likePost">
-            👍 {{ post.likes }}
-        </button>
+        <div class="post-footer">
+            <button class="like" type="button" @click="likePost">
+                👍
+            </button>
+            <span>{{ post.likes }} likes</span>
+        </div>
     </article>
 </template>

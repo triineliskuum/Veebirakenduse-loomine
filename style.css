@@ -1,34 +1,73 @@
-/* ===== Variables and base ===== */
+/* ===== 1. Variables & Base ===== */
 :root {
     --card-bg: #d3d3d3;
     --bar-bg: #afafaf;
-    --accent: #364dc2;
-    --accent-dark: #25378f;
+    --btn-accent: #8da4c4;
+    --btn-accent-hover: #748eaa;
 }
 
-* {
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+    min-height: 100%;
+    margin: 0;
+}
+
+body {
+    background-color: #ffffff;
     font-family: 'Courier New', Courier, monospace;
 }
 
 ul {
     margin: 0;
     padding: 0;
-    list-style: none; /* no marker is shown */
+    list-style: none;
 }
 
-/* ===== Header and navigation (all pages) ===== */
+.app-shell {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.post,
+.post-text,
+.error-container {
+    overflow-wrap: anywhere;
+}
+
+input,
+button,
+textarea,
+select {
+    font-family: inherit;
+}
+
+/* ===== 2. Header & Footer ===== */
 .header {
     position: sticky;
     top: 0;
     z-index: 10;
     background-color: var(--bar-bg);
     border-radius: 10px;
-    padding: 0 10px
+    padding: 0 10px;
 }
 
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 100%;
 }
@@ -38,11 +77,12 @@ nav {
     margin: 0;
 }
 
-.nav a, .nav span{
+.nav a,
+.nav span {
     display: block;
     padding: 10px 15px;
     color: #000000;
-    font-size: .75em;
+    font-size: 0.75em;
     text-decoration: none;
 }
 
@@ -50,86 +90,15 @@ nav {
     background-color: #8f8f8f;
 }
 
-.profile-picture {
-    margin-right: 10px;
-}
-
-
-/* ===== Login and Add post forms (shared card look) ===== */
-.form,
-.post-form {
-    background-color: var(--card-bg);
-    border-radius: 15px;
-    margin: 40px auto;
-    padding: 25px;
-    width: 250px;
-}
-
-.form {
+.footer {
+    border-radius: 10px;
     text-align: center;
+    padding: 12px;
+    margin-top: 15px;
+    font-size: 0.85em;
 }
 
-.post-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-/* Shared button look */
-.login,
-.create-post {
-    background-color: var(--accent);
-    border: none;
-    color: white;
-    cursor: pointer;
-}
-
-.login:hover,
-.create-post:hover {
-    background-color: var(--accent-dark);
-}
-
-/* login.html */
-.user {
-    width: 50%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: none;
-}
-
-.login {
-    width: 30%;
-    padding: 5px;
-}
-
-.form > a {
-    display: inline-block;
-    margin-top: 10px;
-    color: rgb(29, 165, 223);
-    text-decoration: none;
-}
-
-/* addPost.html */
-.post-form textarea {
-    height: 100px;
-    padding: 10px;
-    border: none;
-    resize: vertical;
-}
-
-.post-form input[type="file"] {
-    width: 100%;
-}
-
-.create-post {
-    width: 50%;
-    padding: 7px;
-    margin: 10px auto 0;
-}
-
-/* ===== index.html (layout, posts, footer) ===== */
-
-/* Three columns: side | feed | side */
+/* ===== 3. Feed & Post ===== */
 .layout {
     display: flex;
     gap: 15px;
@@ -148,32 +117,33 @@ nav {
     flex-direction: column;
 }
 
-/* Descendant selector */
 .feed img {
     max-width: 100%;
 }
 
-/* Post card */
 .post {
     background-color: var(--card-bg);
     border-radius: 10px;
     padding: 8px;
 }
 
-/* Adjacent sibling selector */
 .post + .post {
     margin-top: 20px;
 }
 
-/* Child selector */
 .post > .post-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: .75em;
+    font-size: 0.75em;
 }
 
-/* Pseudo-element */
+.post-author {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
 .post-header time::before {
     content: "📅 ";
 }
@@ -187,12 +157,19 @@ nav {
 
 .post-text {
     margin: 8px 0;
-    font-size: .85em;
+    font-size: 0.85em;
 }
 
-/* General sibling selector (text after a photo is smaller) */
 .post-photo ~ .post-text {
-    font-size: .8em;
+    font-size: 0.8em;
+}
+
+.post-footer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+    font-size: 0.8em;
 }
 
 .like {
@@ -202,76 +179,121 @@ nav {
     font-size: 1.1em;
 }
 
-/* Pseudo-class */
 .like:hover {
     transform: scale(1.2);
 }
 
-.footer {
+.reset-likes-btn {
+    align-self: center;
+    margin-top: 16px;
+    background-color: var(--btn-accent);
+    color: #ffffff;
+    border: none;
+    border-radius: 15px;
+    padding: 8px 20px;
+    cursor: pointer;
+    font-size: 0.8em;
+}
+
+.reset-likes-btn:hover {
+    background-color: var(--btn-accent-hover);
+}
+
+/* ===== 4. Signup Validation List ===== */
+/* ===== 4. Signup View ===== */
+.page-wrapper {
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
     border-radius: 10px;
-    text-align: center;
-    padding: 10px;
-    margin-top: 15px;
 }
 
-/* ===== Phone (keep at the end) ===== */
-@media (max-width: 600px) {
-    .side {
-        display: none;
+.signup-box {
+    background-color: #e9ede4;
+    padding: 40px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.input-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.label {
+    width: 90px;
+    font-weight: 500;
+    color: #333333;
+}
+
+.input-row input {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid #cccccc;
+    border-radius: 20px;
+    background-color: #ffffff;
+    outline: none;
+}
+
+.button-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.signup-btn {
+    background-color: var(--btn-accent);
+    color: #ffffff;
+    border: none;
+    padding: 10px 35px;
+    border-radius: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s;
+}
+
+.signup-btn:hover {
+    background-color: var(--btn-accent-hover);
+}
+
+.error-container {
+    margin-top: 20px;
+    font-size: 0.85em;
+}
+
+.error-container ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 8px;
+}
+
+.error-container li {
+    margin-bottom: 6px;
+}
+
+/* ===== 5. Responsive ===== */
+@media (max-width: 480px) {
+    .page-wrapper {
+        padding: 20px 12px;
     }
 
-    .feed {
-        flex: 1;
-        max-width: 100%;
+    .signup-box {
+        padding: 24px 18px;
     }
-}
-/* ===== Dropdown Menu ===== */
-.user-menu {
-    position: relative;
-    display: inline-block;
-    margin-right: 10px; 
-}
 
-#profile-icon:hover {
-    opacity: 0.7;
-}
+    .input-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+    }
 
-.dropdown-menu {
-    display: none; /* Vaikimisi peidus */
-    position: absolute;
-    right: 0;
-    top: 55px; /* Paigutab menüü pildi alla */
-    background-color: var(--card-bg);
-    min-width: 170px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
-    border-radius: 8px;
-    padding: 12px;
-    z-index: 1000;
-}
-
-/* Kui JS lisab klassi 'show', läheb menüü nähtavaks */
-.dropdown-menu.show {
-    display: block;
-}
-
-.dropdown-name {
-    font-size: 0.85em;
-}
-
-.dropdown-email {
-    font-size: 0.85em;
-    margin-top: 4px;
-    padding-bottom: 8px;
-}
-
-.dropdown-logout {
-    display: block;
-    color: black;
-    text-decoration: none;
-    margin-top: 4px;
-    font-size: 0.85em;
-}
-
-.dropdown-logout:hover {
-    text-decoration: underline;
+    .label {
+        width: auto;
+    }
 }
